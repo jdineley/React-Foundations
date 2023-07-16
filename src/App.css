@@ -57,3 +57,12 @@
 .form--marketing > input {
   margin-right: 10px;
 }
+
+.box {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  display: inline-block;
+  margin-right: 4px;
+  border-radius: 5px;
+}
