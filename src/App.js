@@ -9,6 +9,7 @@ import ConditionalRendering1 from './components/ConditionalRendering1';
 import jokesData from './utils/jokesData';
 import Joke from './components/Joke';
 import Stopwatch from './components/Stopwatch';
+import { CountWithoutEffect, CountWithEffect } from './components/UseStateAsync';
 
 function App() {
   const [squares, setSquares] = React.useState(boxes)
@@ -75,6 +76,10 @@ function App() {
       <h2>Stop Watch</h2>
       <p>When information needs to be persisted between rerenders of a component but changing it doesn't require a rerender (in other words, the information is not used directly in the UI) then capture that information in the useRef() hook.  Here the setInterval ID is captured in a useRef() and is used when necessary to cancel the current setInterval</p>
       <Stopwatch/>
+      <h2>UseState is asynchronous</h2>
+      <p>Attempting to use recently set state in the same handler will not receive the new state but instead the previous, owing to the async nature.  HOWEVER, it was noted that the dependent state didn't need to be state, and a top level variable would surfice</p>
+      <CountWithoutEffect />
+      <CountWithEffect />
     </div>
   );
 }
